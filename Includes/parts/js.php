@@ -56,4 +56,6 @@
     <script src="../../Includes/js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
     <script src="../../Includes/js/plugins/fullcalendar/moment.min.js"></script>
     <script src="../../Includes/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../../Includes/js/plugins/sweetalert/sweetalert.min.js"></script>
+
     

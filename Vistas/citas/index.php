@@ -46,7 +46,7 @@
                               <br>
                               <label>Hora Cita</label>
                               <div class="input-group clockpicker" data-autoclose="true">
-                                <input type="text" class="form-control" value="09:30" >
+                                <input name="hora" type="time" class="form-control" value="" >
                                 <span class="input-group-addon">
                                     <span class="fa fa-clock-o"></span>
                                 </span>
@@ -54,15 +54,15 @@
                               <br>
                               <label>Nombre del Peluquero</label>
                               <select class="form-control" name="peluquero">
-                                <option value="peluquero">Seleccione una opcion</option>
-                                <option value="peluquero">Peluquero 1</option>
-                                <option value="peluquero">Peluquero 2</option>
-                                <option value="peluquero">Peluquero 3</option>
+                                <option value="">Seleccione una opcion</option>
+                                <option value="peluquero1">Peluquero 1</option>
+                                <option value="peluquero1">Peluquero 2</option>
+                                <option value="peluquero1">Peluquero 3</option>
                               </select>
                               <div class="hr-line-dashed"></div>
                               <div class="form-group">
-                                  <button class="btn btn-primary" type="submit" id="guardar">Guardar</button>
-                                  <button class="btn btn-danger" type="button">Cancelar</button>
+                                  <button class="btn btn-primary" type="button" id="guardar">Guardar</button>
+                                  <button class="btn btn-danger" type="button" id="cancelar">Cancelar</button>
                               </div>
                             </form>
                             </div>
@@ -97,5 +97,5 @@
 </body>
 <!--js-->
 <?PHP include "../../Includes/parts/js.php";?>
-<script src="index.js"></script>
+<script src="script.js"></script>
 </html>

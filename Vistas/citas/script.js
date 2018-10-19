@@ -24,8 +24,24 @@
       
 
          $('#guardar').click(function() {
+
                 var data = $('#form-citas').serialize();
-                console.log(data);
+                //console.log("Esta es la serializacion:=>"+data);
+
+                $.ajax({
+                    url:"../../Controllers/citas/citasController.php",
+                    type:"POST",
+                    data:data,
+                    seccess:function(d){
+                        swal(d);
+                    }
+                });
+
+
           });
+
+         $('#cancelar').click(function() {
+            swal("Estas seguro de cancelar!");
+         });
 
     });
