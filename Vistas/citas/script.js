@@ -27,15 +27,32 @@
 
                 var data = $('#form-citas').serialize();
                 //console.log("Esta es la serializacion:=>"+data);
+                
 
                 $.ajax({
                     url:"../../Controllers/citas/citasController.php",
                     type:"POST",
                     data:data,
-                    seccess:function(d){
-                        swal(d);
+                    beforeSend:function(){
+                    console.log("Se esta procesando tu peticion");
                     }
-                });
+                    
+                }).done(function(data){
+                    console.log(data);
+                    if(data == 'ok'){
+
+                        alert("recibido con exito.");
+
+                    }else{
+
+                        alert("Viene vacio.");
+                    }
+
+                }).fail(function(){
+
+                }).always(function(){
+
+                }, 'json');
 
 
           });
@@ -43,5 +60,7 @@
          $('#cancelar').click(function() {
             swal("Estas seguro de cancelar!");
          });
+
+       
 
     });
