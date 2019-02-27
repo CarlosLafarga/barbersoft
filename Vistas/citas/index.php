@@ -76,9 +76,38 @@
                      <div class="col-lg-7">
                       <div class="row wrapper border-bottom white-bg page-heading">
                          
-                             <h2>Calendario</h2>
+                             <h2>Citas del día</h2>
                              <div class="ibox-content">
-                             <div id="calendar"></div>
+                              <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre Completo</th>
+                                <th>Fecha y hora cita</th>
+                                <th>Nombre del Barbero</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+                        </table>
                              </div>
                          
                      </div>
