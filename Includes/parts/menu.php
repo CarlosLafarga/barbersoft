@@ -25,14 +25,14 @@
                     </li>
 
                        <li>
-                         <a href="#"><i class="fa fa-id-card"></i> <span class="nav-label">CITAS</span><span class="fa arrow"></span></a>
+                         <a href="#"><i class="fa fa-calendar"></i> <span class="nav-label">CITAS</span><span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level collapse">
-                            <li><a href="../../Vistas/caja/">Nueva Cita</a></li>
+                            <li><a href="../../Vistas/citas/">Nueva Cita</a></li>
                          </ul>
                       </li>
 
                        <li>
-                         <a href="#"><i class="fa fa-id-card"></i> <span class="nav-label">VENTAS</span><span class="fa arrow"></span></a>
+                         <a href="#"><i class="fa fa-money"></i> <span class="nav-label">VENTAS</span><span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level collapse">
                             <li><a href="../../Vistas/caja/">Nueva Venta</a></li>
                          </ul>

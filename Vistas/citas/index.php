@@ -1,43 +1,38 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-   <title>BarberSoft</title>
-   <!--css-->
-   <?PHP include "../../Includes/parts/css.php";?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inicio</title>
+    <?PHP include "../../Includes/parts/css.php";?>
 </head>
-<body class="top-navigation">
-  <div id="wrapper">
-     <div id="page-wrapper" class="gray-bg">
-            <!--menu-->
-            <?PHP include "../../Includes/parts/menu.php";?>
-            <div class="wrapper wrapper-content">
-               <div class="container">
 
-                      <!-- Contenido de la pagína-->
-                      <!--breadcrumb-->
-                      <div class="row wrapper border-bottom white-bg page-heading">
-                         <div class="col-lg-10">
-                             <h2>Citas</h2>
-                             <ol class="breadcrumb">
-                                 <li>
-                                     <a href="">Inicio</a>
-                                 </li>
-                                 <li class="active">
-                                     <strong>Citas</strong>
-                                 </li>
-                             </ol>
-                         </div>
-                     </div>
-                     <!--fin breadcrumb-->
-                      <br>
+<body>
+   <div id="wrapper">
+     
+        <!--MENU-->
+          <?PHP include "../../Includes/parts/menu.php";?>
+        <!--FIN MENU-->
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+               <?PHP include "../../Includes/parts/navbar.php";?>
+                <div class="row  border-bottom white-bg dashboard-header">
+                  <!--titulo-->
+                </div>
+
+                <div class="row">
+                <div class="col-lg-12">
+                <div class="wrapper wrapper-content">
+                    <!--Contenedor-->
                       <div class="row">
-                      <div class="col-lg-4">
-                      <div class="row wrapper border-bottom white-bg page-heading">
-                         
-                            <h2>Crear Citas</h2>
-                            <div class="ibox-content">
-                            <form  id="form-citas" >
+                        <div class="col-lg-4">
+                        <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>Nueva cita</h5>
+                        </div>
+                        <div class="ibox-content">
+                        <form  id="form-citas" >
                               <label>Nombre Persona</label>
                               <input type="text" name="name" class="form-control">
                               <br>
@@ -65,18 +60,19 @@
                                   <button class="btn btn-danger" type="button" id="cancelar">Cancelar</button>
                               </div>
                             </form>
-                            </div>
-
-                     </div>
-                     </div>
-                     <!---->
-                     <div class="col-lg-1">
-                     </div>
-                     <!---->
-                     <div class="col-lg-7">
-                      <div class="row wrapper border-bottom white-bg page-heading">
+                          </div>
+                          </div>
+                          </div>
+                          
+                     
+                        <div class="col-lg-8">
+                        <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>Citas del día</h5>
+                        </div>
+                        <div class="ibox-content">
                          
-                             <h2>Citas del día</h2>
+                             
                              <div class="ibox-content">
                               <table class="table">
                             <thead>
@@ -107,24 +103,29 @@
                                 <td>@twitter</td>
                             </tr>
                             </tbody>
-                        </table>
-                             </div>
+                            </table>
+                            </div>
                          
-                     </div>
-                     </div>
-                     </div><br>
-                      
+                        </div>
+                        </div>
+                        </div>
 
-               </div>
+                        </div>
 
-            </div>
-            <!--footer-->
-      <?PHP include "../../Includes/parts/footer.php";?>
-      </div>
-      
-  </div>
+                     </div>
+                    <!--Fin Contenedor-->   
+                </div>
+                </div>
+                </div>
+          <!--footer-->
+          
+          <?PHP include "../../Includes/parts/footer.php";?>
+          <!--fin footer-->
+        </div>
+    </div>
+    
+
+    <!-- Mainly scripts -->
+    <?PHP include "../../Includes/parts/js.php";?>
 </body>
-<!--js-->
-<?PHP include "../../Includes/parts/js.php";?>
-<script src="script.js"></script>
 </html>
