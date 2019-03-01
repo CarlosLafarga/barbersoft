@@ -3,6 +3,6 @@
                 
     </div>
     <div>
-        <strong>Copyright</strong> HMODevelopers &copy; 2017-2018
+        <strong>Copyright</strong><span class="text-info"><b> HMODevelopers</b></span> &copy; 2017-2018
     </div>
 </div>

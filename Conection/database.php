@@ -1,26 +1,14 @@
 <?php
-class Database{
- 
-    // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "barbersoft";
-    private $username = "root";
-    private $password = "";
-    public  $conn;
- 
-    // get the database connection
-    public function getConnection(){
- 
-        $this->conn = null;
- 
-        try{
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-            $this->conn->exec("set names utf8");
-        }catch(PDOException $exception){
-            echo "Connection error: " . $exception->getMessage();
-        }
- 
-        return $this->conn;
-    }
+function Conectarse()
+{
+    $servidor    = "localhost";
+    $basededatos = "barbersoft";
+    $usuario     = "root";
+    $clave       = "";
+
+    @$cn = mysql_connect($servidor, $usuario, $clave) or die("Error conectando a la base de datos");
+    mysql_select_db($basededatos, $cn) or die("Error seleccionando la Base de datos");
+    mysql_query("SET NAMES 'utf8'");
+
+    return $cn;
 }
-?>

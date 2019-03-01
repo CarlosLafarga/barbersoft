@@ -84,28 +84,8 @@
                                 <th>Acciones<th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <th><th>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <th><th>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <th><th>
-                            </tr>
+                            <tbody id="citas_rows">
+                            
                             </tbody>
                             </table>
                             </div>
@@ -130,6 +110,8 @@
     
 
     <!-- Mainly scripts -->
-    <?PHP include "../../Includes/parts/js.php";?>
+    <?PHP include "js.php";?>
+
 </body>
+
 </html>

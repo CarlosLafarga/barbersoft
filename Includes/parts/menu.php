@@ -46,7 +46,7 @@
                        <li>
                          <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">CONFIGURACION</span><span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level collapse">
-                            <li><a href="../../Vistas/usuarios/">Cambiar precios</a></li>
+                            <li><a href="../../Vistas/config/">Cambiar precios</a></li>
                          </ul>
                       </li>
                     
