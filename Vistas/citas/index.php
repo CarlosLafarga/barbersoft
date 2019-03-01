@@ -81,6 +81,7 @@
                                 <th>Nombre Completo</th>
                                 <th>Fecha y hora cita</th>
                                 <th>Nombre del Barbero</th>
+                                <th>Acciones<th>
                             </tr>
                             </thead>
                             <tbody>
@@ -89,18 +90,21 @@
                                 <td>Mark</td>
                                 <td>Otto</td>
                                 <td>@mdo</td>
+                                <th><th>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>Jacob</td>
                                 <td>Thornton</td>
                                 <td>@fat</td>
+                                <th><th>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>Larry</td>
                                 <td>the Bird</td>
                                 <td>@twitter</td>
+                                <th><th>
                             </tr>
                             </tbody>
                             </table>

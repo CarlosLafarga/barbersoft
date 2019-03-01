@@ -37,46 +37,25 @@
                            <table class="table">
                         <tbody>
                         <tr>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">1</button>
-                                Corte Tradicional
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">2</button>
-                                Corte Rasurado
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">3</button>
-                               Comments
-                            </td>
+                            <td><button type="button" id="corte1" name="corte" class="btn btn-primary m-r-sm">1</button><b>CORTE TRADICIONAL</b></td>
+                            <td><button type="button" id="corte2" name="corte" class="btn btn-primary m-r-sm">2</button><b>CORTE RASURADO</b></td>
+                            <td><button type="button" id="corte3" name="corte" class="btn btn-primary m-r-sm">3</button><b>BARBA</b></td>
                         </tr>
                         <tr>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">4</button>
-                                News
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">5</button>
-                                Likes
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">6</button>
-                                Notifications
-                            </td>
+                            <td><button type="button" id="corte4" name="corte" class="btn btn-primary m-r-sm">4</button><b>CEJA</b></td>
+                            <td><button type="button" id="corte5" name="corte" class="btn btn-primary m-r-sm">5</button><b>TINTE</b></td>
+                            <td><button type="button" id="corte6" name="corte" class="btn btn-primary m-r-sm">6</button><b>FACIAL</b></td>
                         </tr>
                         <tr>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">6</button>
-                                Albums
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">7</button>
-                                Groups
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary m-r-sm">8</button>
-                                Permissions
-                            </td>
+                            <td><button type="button" id="corte7" name="corte" class="btn btn-primary m-r-sm">7</button><b>RAYA</b></td>
+                            <td><button type="button" id="corte8" name="corte" class="btn btn-primary m-r-sm">8</button><b>BIGOTE</b></td>
+                            <td><button type="button" id="corte9" name="corte" class="btn btn-primary m-r-sm">9</button><b>AFEITADO</b></td>
+                          </tr>
+
+                          <tr>
+                            <td><button type="button" id="corte10" name="corte" class="btn btn-primary m-r-sm">10</button><b>MARCADO</b></td>
+                            <td><button type="button" id="corte11" name="corte" class="btn btn-primary m-r-sm">11</button><b>3RA EDAD</b></td>
+                            <td><button type="button" id="corte12" name="corte" class="btn btn-primary m-r-sm">12</button><b>UN NUMERO</b></td>
                         </tr>
                         </tbody>
                     </table>
@@ -101,7 +80,7 @@
                         <div class="ibox-content">
                                 
                                 <span>Total</span>
-                                <input type="text" class="form-control" name="total" id="total" value="$390,00" readonly="">
+                                <input type="number" class="form-control" name="total" id="total" value="0" readonly="" min="0"  style="font-size: 30px; text-align: right;">
                                 <br>
                                 <br>
                            

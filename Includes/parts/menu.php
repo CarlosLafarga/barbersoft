@@ -37,6 +37,18 @@
                             <li><a href="../../Vistas/caja/">Nueva Venta</a></li>
                          </ul>
                       </li>
+                      <li>
+                         <a href="#"><i class="fa fa-user-o"></i> <span class="nav-label">USUARIOS</span><span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level collapse">
+                            <li><a href="../../Vistas/usuarios/">Nuevos Usuarios</a></li>
+                         </ul>
+                      </li>
+                       <li>
+                         <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">CONFIGURACION</span><span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level collapse">
+                            <li><a href="../../Vistas/usuarios/">Cambiar precios</a></li>
+                         </ul>
+                      </li>
                     
                 </ul>
 
