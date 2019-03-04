@@ -74,14 +74,14 @@
                          
                              
                              <div class="ibox-content">
-                              <table class="table">
+                              <table class="table table-bordered" >
                             <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Nombre Completo</th>
                                 <th>Fecha y hora cita</th>
                                 <th>Nombre del Barbero</th>
-                                <th>Acciones<th>
+                                <th>Acciones</th>
                             </tr>
                             </thead>
                             <tbody id="citas_rows">
@@ -100,7 +100,7 @@
                     <!--Fin Contenedor-->   
                 </div>
                 </div>
-                </div>
+                
           <!--footer-->
           
           <?PHP include "../../Includes/parts/footer.php";?>
@@ -109,9 +109,9 @@
     </div>
     
 
-    <!-- Mainly scripts -->
-    <?PHP include "js.php";?>
+   
 
 </body>
-
+ <!-- Mainly scripts -->
+    <?PHP include "js.php";?>
 </html>

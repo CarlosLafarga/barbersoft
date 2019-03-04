@@ -6,7 +6,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                           <!-- <img alt="image" class="img-circle" src="img/profile_small.jpg" />-->
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
@@ -20,7 +20,7 @@
                             </ul>
                         </div>
                         <div class="logo-element">
-                            IN+
+                            <i class=""></i>
                         </div>
                     </li>
 
@@ -41,10 +41,18 @@
                          <a href="#"><i class="fa fa-user-o"></i> <span class="nav-label">USUARIOS</span><span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level collapse">
                             <li><a href="../../Vistas/usuarios/">Nuevos Usuarios</a></li>
+                            <li><a href="../../Vistas/usuarios/">Cambiar Contraseña</a></li>
                          </ul>
                       </li>
                        <li>
                          <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">CONFIGURACION</span><span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level collapse">
+                            <li><a href="../../Vistas/config/">Cambiar precios</a></li>
+                            <li><a href="../../Vistas/config/">Administrar Personal</a></li>
+                         </ul>
+                      </li>
+                        <li>
+                         <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">REPORTES</span><span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level collapse">
                             <li><a href="../../Vistas/config/">Cambiar precios</a></li>
                          </ul>
