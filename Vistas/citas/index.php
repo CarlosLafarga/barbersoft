@@ -34,30 +34,30 @@
                         <div class="ibox-content">
                         <form  id="form-citas" >
                               <label>Nombre Persona</label>
-                              <input type="text" name="name" class="form-control">
+                              <input type="text" name="name" id="nombre" class="form-control">
                               <br>
                               <label>Fecha Cita</label>
-                              <input type="date" name="fecha" class="form-control">
+                              <input type="date" name="fecha" id="fecha" class="form-control">
                               <br>
                               <label>Hora Cita</label>
-                              <div class="input-group clockpicker" data-autoclose="true">
-                                <input name="hora" type="time" class="form-control" value="" >
+                              <div class="input-group clockpicker"  data-autoclose="true">
+                                <input name="hora" type="time" class="form-control" value="" id="hora" >
                                 <span class="input-group-addon">
                                     <span class="fa fa-clock-o"></span>
                                 </span>
                               </div>
                               <br>
                               <label>Nombre del Peluquero</label>
-                              <select class="form-control" name="peluquero">
+                              <select class="form-control" name="peluquero" id="peluquero">
                                 <option value="">Seleccione una opcion</option>
-                                <option value="peluquero1">Peluquero 1</option>
-                                <option value="peluquero1">Peluquero 2</option>
-                                <option value="peluquero1">Peluquero 3</option>
+                                <option value="1">Peluquero 1</option>
+                                <option value="2">Peluquero 2</option>
+                                <option value="3">Peluquero 3</option>
                               </select>
                               <div class="hr-line-dashed"></div>
                               <div class="form-group">
                                   <button class="btn btn-primary" type="button" id="guardar">Guardar</button>
-                                  <button class="btn btn-danger" type="button" id="cancelar">Cancelar</button>
+                                  <button class="btn btn-danger" type="button"  id="cancelar">Cancelar</button>
                               </div>
                             </form>
                           </div>
