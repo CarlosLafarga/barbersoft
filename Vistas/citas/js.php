@@ -23,7 +23,7 @@
                 var nuevafila = "<tr><td>"+id+"</td><td>" +
                 types.data[i].nombre_persona    + "</td><td>" +
                 types.data[i].fechahora_cita     +  "</td><td>" +
-                types.data[i].nombre_completo   + "</td><td><button class='btn btn-primary'>Editar</button><button class='btn btn-danger'>Eliminar</button></td></tr>" ;
+                types.data[i].nombre_completo   + "</td><td><button class='btn btn-primary'><i class='fa fa-pencil'></i></button><button class='btn btn-danger'><i class='fa fa-trash'></i></button></td></tr>" ;
                 
                 //console.log("Estoy dentro del for");
                 $("#citas_rows").append(nuevafila)
