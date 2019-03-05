@@ -2,17 +2,20 @@
 <script type="text/javascript">
 	$( document ).ready(function() {
     console.log( "ready!" );
-    listar();
+    var date = $("#fecha-escoger").val();
+    listar(date);
     });
 
 
 
 
-   function listar(){
-
+   function listar(date){
+   
    var ajax = $.ajax({
-        data:{},
+        data:{date:date},
+        method:"POST",
         url:"../../Controllers/citas/listarCitas.php",
+
         success: function (response) {
 
             var types = JSON.parse(response);
@@ -24,7 +27,7 @@
                 var nuevafila = "<tr><td>"+id+"</td><td>" +
                 types.data[i].nombre_persona    + "</td><td>" +
                 types.data[i].fechahora_cita     +  "</td><td>" +
-                types.data[i].nombre_completo   + "</td><td><center><button class='btn btn-primary'><i class='fa fa-pencil'></i></button><button class='btn btn-danger'><i class='fa fa-trash'></i></button></center></td></tr>" ;
+                types.data[i].nombre_completo   + "</td><td><center><button class='btn btn-primary'><i class='fa fa-pencil'></i></button>&nbsp;<button class='btn btn-danger'><i class='fa fa-trash'></i></button></center></td></tr>" ;
                 
               
                 $("#citas_rows").append(nuevafila);

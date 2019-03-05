@@ -37,7 +37,7 @@
                               <input type="text" name="name" id="nombre" class="form-control">
                               <br>
                               <label>Fecha Cita</label>
-                              <input type="date" name="fecha" id="fecha" class="form-control">
+                              <input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                               <br>
                               <label>Hora Cita</label>
                               <div class="input-group clockpicker"  data-autoclose="true">
@@ -71,10 +71,16 @@
                             <h5>Citas del día</h5>
                         </div>
                         <div class="ibox-content">
-                         
-                             
-                             <div class="ibox-content">
-                              <table class="table table-bordered" >
+                            
+
+                            <div class="row">
+                            <div class="col-lg-3">
+                            <label>Fecha:</label>
+                            <input type="date" name="fecha-escoger" id="fecha-escoger" class="form-control" value="<?php echo date('Y-m-d'); ?>" onchange="listar(this.value)"><br>
+                            </div>
+                            </div>
+
+                            <table class="table table-bordered" >
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -88,7 +94,7 @@
                             
                             </tbody>
                             </table>
-                            </div>
+                            
                          
                         </div>
                         </div>

@@ -2,9 +2,10 @@
 include "../../Conection/database.php";
 $cn = Conectarse();
 
+$date = $_POST['date'];
 
 
-$select = "SELECT nombre_persona,fechahora_cita,personal.nombre_completo FROM citas LEFT JOIN personal ON citas.id_persona = personal.id_personal ";
+$select = "SELECT nombre_persona,fechahora_cita,personal.nombre_completo FROM citas LEFT JOIN personal ON citas.id_persona = personal.id_personal  WHERE DATE(fechahora_cita) = '".$date."'";
 $result = mysql_query($select, $cn);
 
 if (!$result) {
