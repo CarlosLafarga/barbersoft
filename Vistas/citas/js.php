@@ -2,17 +2,20 @@
 <script type="text/javascript">
 	$( document ).ready(function() {
     console.log( "ready!" );
-    listar();
+    var date = $("#fecha-escoger").val();
+    listar(date);
     });
 
 
 
 
-   function listar(){
-
+   function listar(date){
+   
    var ajax = $.ajax({
-        data:{},
+        data:{date:date},
+        method:"POST",
         url:"../../Controllers/citas/listarCitas.php",
+
         success: function (response) {
 
             var types = JSON.parse(response);
@@ -24,7 +27,11 @@
                 var nuevafila = "<tr><td>"+id+"</td><td>" +
                 types.data[i].nombre_persona    + "</td><td>" +
                 types.data[i].fechahora_cita     +  "</td><td>" +
-                types.data[i].nombre_completo   + "</td><td><center><button class='btn btn-primary'><i class='fa fa-pencil'></i></button><button class='btn btn-danger'><i class='fa fa-trash'></i></button></center></td></tr>" ;
+<<<<<<< HEAD
+                types.data[i].nombre_completo   + "</td><td><center><button class='btn btn-primary' data-original-title='Editar'><i class='fa fa-pencil'></i></button><button class='btn btn-danger' data-original-title='Borrar'><i class='fa fa-trash'></i></button></center></td></tr>" ;
+=======
+                types.data[i].nombre_completo   + "</td><td><center><button class='btn btn-primary'><i class='fa fa-pencil'></i></button>&nbsp;<button class='btn btn-danger'><i class='fa fa-trash'></i></button></center></td></tr>" ;
+>>>>>>> 1569abc6434b2282d12ab3f38649f1d944ca4b6f
                 
               
                 $("#citas_rows").append(nuevafila);
@@ -91,6 +98,33 @@
 
             }
 
+
+        });
+
+    $('#cancelar').click(function(){
+
+                   swal({
+                         title: "Estas Seguro?",
+                         text: "¿Desea cancelar la cita?",
+                         type: "warning",
+                         showCancelButton: true,
+                         confirmButtonColor: '#DD6B55',
+                         confirmButtonText: 'Si, Estoy seguro!',
+                         cancelButtonText: "No, Cancelar!"
+
+                         },
+                         function (isConfirm) { /*Your Code Here*/
+
+                          if (isConfirm){
+
+                              $("#form-citas")[0].reset();
+
+                              }else{
+
+                               return false;
+
+                             }
+                        });
 
         });
 
