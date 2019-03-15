@@ -70,7 +70,7 @@
                          type: "success"
                          });
                          $("#form-citas")[0].reset();
-                         listar();
+                         listar(fecha);
 
                     }else if(numero = 2){
 

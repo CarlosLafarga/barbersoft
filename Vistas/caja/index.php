@@ -34,31 +34,11 @@
                             <h5>Servicios</h5>
                         </div>
                         <div class="ibox-content">
-                           <table class="table">
-                        <tbody>
-                        <tr>
-                            <td><button type="button" id="corte1" name="corte" class="btn btn-primary m-r-sm">1</button><b>CORTE TRADICIONAL</b></td>
-                            <td><button type="button" id="corte2" name="corte" class="btn btn-primary m-r-sm">2</button><b>CORTE RASURADO</b></td>
-                            <td><button type="button" id="corte3" name="corte" class="btn btn-primary m-r-sm">3</button><b>BARBA</b></td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" id="corte4" name="corte" class="btn btn-primary m-r-sm">4</button><b>CEJA</b></td>
-                            <td><button type="button" id="corte5" name="corte" class="btn btn-primary m-r-sm">5</button><b>TINTE</b></td>
-                            <td><button type="button" id="corte6" name="corte" class="btn btn-primary m-r-sm">6</button><b>FACIAL</b></td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" id="corte7" name="corte" class="btn btn-primary m-r-sm">7</button><b>RAYA</b></td>
-                            <td><button type="button" id="corte8" name="corte" class="btn btn-primary m-r-sm">8</button><b>BIGOTE</b></td>
-                            <td><button type="button" id="corte9" name="corte" class="btn btn-primary m-r-sm">9</button><b>AFEITADO</b></td>
-                          </tr>
-
-                          <tr>
-                            <td><button type="button" id="corte10" name="corte" class="btn btn-primary m-r-sm">10</button><b>MARCADO</b></td>
-                            <td><button type="button" id="corte11" name="corte" class="btn btn-primary m-r-sm">11</button><b>3RA EDAD</b></td>
-                            <td><button type="button" id="corte12" name="corte" class="btn btn-primary m-r-sm">12</button><b>UN NUMERO</b></td>
-                        </tr>
+                        <table class="table">
+                        <tbody id="txtHint">
+                            
                         </tbody>
-                    </table>
+                        </table>
                         </div>
                         
                         
@@ -118,24 +98,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                            
                             </tbody>
                             </table>
                             </div>
