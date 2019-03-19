@@ -35,8 +35,8 @@
                         </div>
                         <div class="ibox-content">
                         <table class="table">
-                        <tbody id="txtHint">
-                            
+                        <tbody  id="txtHint" >
+                       
                         </tbody>
                         </table>
                         </div>
@@ -62,7 +62,11 @@
                                 <span>Total</span>
                                 <input type="number" class="form-control" name="total" id="total" value="0" readonly="" min="0"  style="font-size: 30px; text-align: right;">
                                 <br>
-                                <br>
+                                <span>Barbero</span>
+                                <select class="form-control" id="barberos">
+                                    
+                                </select>
+                                
                            
 
                             <hr/>
@@ -88,13 +92,14 @@
                          
                              
                              <div class="ibox-content">
-                              <table class="table">
+                              <table class="table" id="ventas">
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nombre Completo</th>
-                                <th>Fecha y hora cita</th>
-                                <th>Nombre del Barbero</th>
+                                <th>Tipo Corte</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -120,6 +125,6 @@
     
 
     <!-- Mainly scripts -->
-    <?PHP include "../../Includes/parts/js.php";?>
+    <?PHP include "js.php";?>
 </body>
 </html>
