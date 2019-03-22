@@ -1,5 +1,8 @@
 <?PHP include "../../Includes/parts/js.php";?>
 <script type="text/javascript">
+    var i = 0;
+    var total_acumulado = 0;
+
 	$( document ).ready(function() {
 
      	botones();
@@ -47,21 +50,29 @@
        	
         
        	 var id = $(valor).attr("id");
-         var tipo_corte = $(id).text();
+         var uno = document.getElementById(id);
+         var tipo_corte = uno.innerText;
          var cantidad = 1 ;
          var precio = document.getElementById(id).value;
-
+         var total = document.getElementById("total").value;
+         var total_acumulado = total + precio;
+         console.log(total);
+         i++;
          
 
-         var i = 1; //contador para asignar id al boton que borrara la fila
-         var fila = '<tr id="row' + i + '"><td>' + tipo_corte + '</td><td>' + cantidad + '</td><td>' + precio + '</td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">Quitar</button></td></tr>'; //esto seria lo que contendria la fila
-         console.log(fila);
-         i++;
+         //contador para asignar id al boton que borrara la fila
+         var fila = '<tr id="row' + i + '"><td>'+i+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" value="1" min="1"></td><td>' + precio + '</td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">Quitar</button></td></tr>'; //esto seria lo que contendria la fila
+        
+         
+          console.log(fila);
+          console.log(i);
 
         $('#ventas tr:first').after(fila);
         $("#adicionados").text(""); //esta instruccion limpia el div adicioandos para que no se vayan acumulando
-          var nFilas = $("#ventas tr").length;
-        $("#adicionados").append(nFilas - 1);
+        var nFilas = $("#ventas tr").length;
+        $("#adicionados").append(nFilas);
+        
+
 
         
 
@@ -74,7 +85,9 @@
         $("#adicionados").text("");
         var nFilas = $("#ventas tr").length;
         $("#adicionados").append(nFilas - 1);
+        i-1;
         });
+
 
        
 
