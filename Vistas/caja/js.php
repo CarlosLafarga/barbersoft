@@ -2,6 +2,10 @@
 <script type="text/javascript">
     var i = 0;
     var total_acumulado = 0;
+    var contador = 0;
+    var acumulado  = 0;
+    var preciofinal = 0;
+    var nFilas = 0;
 
 	$( document ).ready(function() {
 
@@ -47,8 +51,6 @@
 
        function agregar_venta(valor){
 
-       	
-        
        	 var id = $(valor).attr("id");
          var uno = document.getElementById(id);
          var tipo_corte = uno.innerText;
@@ -57,42 +59,66 @@
          var total = document.getElementById("total").value;
          var total_acumulado = total + precio;
          console.log(total);
-         i++;
+         contador++;
          
 
          //contador para asignar id al boton que borrara la fila
-         var fila = '<tr id="row' + i + '"><td>'+i+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" value="1" min="1"></td><td>' + precio + '</td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">Quitar</button></td></tr>'; //esto seria lo que contendria la fila
+         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" value="1" min="1"></td><td>' + precio + '</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
         
          
-          console.log(fila);
-          console.log(i);
+          console.log("fila",fila);
+          console.log("contador",contador);
+          console.log("precio",precio);
 
-        $('#ventas tr:first').after(fila);
-        $("#adicionados").text(""); //esta instruccion limpia el div adicioandos para que no se vayan acumulando
-        var nFilas = $("#ventas tr").length;
-        $("#adicionados").append(nFilas);
-        
+            
 
-
-        
-
-
-       $(document).on('click', '.btn_remove', function() {
-        var button_id = $(this).attr("id");
-        //cuando da click obtenemos el id del boton
-        $('#row' + button_id + '').remove(); //borra la fila
-        //limpia el para que vuelva a contar las filas de la tabla
-        $("#adicionados").text("");
-        var nFilas = $("#ventas tr").length;
-        $("#adicionados").append(nFilas - 1);
-        i-1;
-        });
-
-
-       
+          var btn = document.createElement("tr");
+          btn.innerHTML=fila;
+          document.getElementById("ventas").appendChild(btn);
+          total = parseFloat(precio);
+          acumulado = document.getElementById("total").value;
+          preciofinal = parseFloat(total) + parseFloat(acumulado);
+          document.getElementById("total").value = preciofinal.toFixed(2);
 
        }
 
+       function deleteRow(r) {
 
+         
+         var i = r.parentNode.parentNode.rowIndex;
+         console.log("este es el valor de r",r);
+         console.log("este es el valor de i",i);
+         swal({
+         title: "Estas Seguro?",
+         text: "¿Desea eliminar el producto de la venta   "+i+" ?",
+         type: "warning",
+         showCancelButton: true,
+         confirmButtonColor: '#DD6B55',
+         confirmButtonText: 'Si, Estoy seguro!',
+         cancelButtonText: "No, Cancelar!"
+
+         },
+         function (isConfirm) { 
+
+         if (isConfirm){
+
+         var total_ventas = document.getElementById('ventas').rows[0].cells[3];
+         var total_input = document.getElementById("total").value;
+         var precio_producto_select = total_ventas.innerHTML;
+         var preciofinalrow =  parseFloat(total_input) - parseFloat(precio_producto_select);
+         document.getElementById("total").value = preciofinalrow.toFixed(2);
+         document.getElementById("ventas").deleteRow(i);
+         contador = contador -1;
+         console.log("total_row ",total_ventas);      
+                         
+
+        }else{
+
+        return false;
+
+        }
+        });
+
+        }
        
 </script>

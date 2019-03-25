@@ -91,8 +91,9 @@
                         <div class="ibox-content">
                          
                              
-                             <div class="ibox-content">
-                              <table class="table" id="ventas">
+                            <div class="ibox-content">
+                            <div class="table-responsive">
+                            <table class="table table-bordered" >
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -102,12 +103,13 @@
                                 <th>Acciones</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="ventas">
                             
                             </tbody>
                             </table>
                             </div>
                          
+                        </div>
                         </div>
                         </div>
                         </div>
