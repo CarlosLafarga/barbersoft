@@ -63,7 +63,7 @@
          
 
          //contador para asignar id al boton que borrara la fila
-         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" value="1" min="1"></td><td>' + precio + '</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
+         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td>' + precio + '</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
         
          
           console.log("fila",fila);
@@ -86,11 +86,11 @@
 
          
          var i = r.parentNode.parentNode.rowIndex;
-         console.log("este es el valor de r",r);
+         console.log("este es el valor de r",r.parentNode.parentNode.parentNode.rowIndex);
          console.log("este es el valor de i",i);
          swal({
          title: "Estas Seguro?",
-         text: "¿Desea eliminar el producto de la venta   "+i+" ?",
+         text: "¿Desea eliminar el producto de la venta?",
          type: "warning",
          showCancelButton: true,
          confirmButtonColor: '#DD6B55',
@@ -120,5 +120,36 @@
         });
 
         }
+
+        function cantidad(e) {
+
+            var row = e.parentNode.parentNode.rowIndex;
+            console.log("row", row);
+            var total_ventas = document.getElementById('tablita').rows[row].cells[3];
+            var precio_articulo = document.getElementById('tablita').rows[row].cells[3].children[0].value;
+            var precio_input1 = $("#precios"+row+"").val();
+            var chuy = precio_articulo.value = Number(precio_input1);
+
+
+
+
+            var newQty = parseFloat(e.value);
+            var precio_art = parseFloat(chuy);
+
+
+            var total = precio_articulo * newQty;
+            total_ventas.innerText = total.toFixed(2);
+
+            var data = [];
+            $("td.subtotal").each(function(){
+                 data.push(parseFloat($(this).text()));
+             });
+            var suma = data.reduce(function(a,b){ return a+b; },0);
+
+
+            document.getElementById("total").value = suma.toFixed(2);
+
+
+            }
        
 </script>

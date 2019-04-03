@@ -40,7 +40,7 @@
                        <li>
                          <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">CONFIGURACION</span><span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level collapse">
-                            <li><a href="../../Vistas/config/">Cambiar Precios</a></li>
+                            <li><a href="../../Vistas/config/">Administrar Servicios</a></li>
                             <li><a href="../../Vistas/config/">Administrar Personal</a></li>
                          </ul>
                       </li>

@@ -3,7 +3,7 @@ include "../../Conection/database_li.php";
 $cn = Conectarse();
 
 
- $datos = $cn->query("SELECT * FROM servicios WHERE es_activo = 1");
+ $datos = $cn->query("SELECT * FROM servicios WHERE activo = 1");
  $count = 0;
 
 
@@ -15,8 +15,8 @@ $cn = Conectarse();
    		if($count%3==0){ 
         echo '<tr>';} 
 
-    	echo '<td><button type="button" id="'.$boton['Id_servicios'].'" value ="'.$boton['precio'].'" class="agregar btn btn-w-m btn-primary" onclick="agregar_venta(this)">'.$boton['nombre'].'</button></td>';
-    	$count ++;
+      	echo '<td><button type="button" id="'.$boton['Id_servicios'].'" value ="'.$boton['precio'].'" class="agregar btn btn-w-m btn-primary" onclick="agregar_venta(this)">'.$boton['nombre'].'</button></td>';
+     	 $count ++;
 
     	if($count%3==0){ 
         echo '</tr>';} 

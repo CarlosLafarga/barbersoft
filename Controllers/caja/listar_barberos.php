@@ -2,7 +2,7 @@
 include "../../Conection/database.php";
 $cn = Conectarse();
 
-$query  = "SELECT Id_personal,nombre_completo FROM personal  WHERE id_puesto  = 1 ORDER BY nombre_completo";
+$query  = "SELECT Id_personal,nombre_completo FROM personal  WHERE id_puesto  = 1 ORDER BY id_personal ASC";
 $result = mysql_query($query, $cn)
 or die("Ocurrio un error en la consulta SQL");
 

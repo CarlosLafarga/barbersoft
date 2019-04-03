@@ -37,8 +37,11 @@
                               <input type="text" name="name" id="nombre" class="form-control">
                               <br>
                               <label>Fecha Cita</label>
-                              <input type="date" name="fecha" id="fecha" class="form-control" value="<?php date_default_timezone_set('America/Hermosillo'); echo date('Y-m-d'); ?>">
-                              <br>
+                              <div class="form-group" id="data1">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" id="fecha" class="form-control" value="<?php date_default_timezone_set('America/Hermosillo'); echo date('Y-m-d'); ?>">
+                                </div>
+                              </div>
                               <label>Hora Cita</label>
                               <div class="input-group clockpicker"  data-autoclose="true">
                                 <input name="hora" type="time" class="form-control" value="" id="hora" >
@@ -49,10 +52,6 @@
                               <br>
                               <label>Nombre del Peluquero</label>
                               <select class="form-control" name="peluquero" id="peluquero">
-                                <option value="">Seleccione una opcion</option>
-                                <option value="1">Peluquero 1</option>
-                                <option value="2">Peluquero 2</option>
-                                <option value="3">Peluquero 3</option>
                               </select>
                               <div class="hr-line-dashed"></div>
                               <div class="form-group">

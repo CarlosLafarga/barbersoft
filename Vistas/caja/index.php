@@ -59,24 +59,32 @@
                         </div>
                         <div class="ibox-content">
                                 
-                                <span>Total</span>
+                                <label>Total</label>
                                 <input type="number" class="form-control" name="total" id="total" value="0" readonly="" min="0"  style="font-size: 30px; text-align: right;">
                                 <br>
-                                <span>Barbero</span>
+                                <label>Barbero</label>
                                 <select class="form-control" id="barberos">
                                     
                                 </select>
-                                
-                           
+                                <br>
+                                <label>Tipo Pago</label>
+                                <select class="form-control" id="tipo_pago">
+                                    <option value="1">Efectivo</option>
+                                    <option value="2">Tarjeta</option>
+                                    <option value="3">Cortesia</option>
+                                </select>
+                                <br>
+                                <label>Pago con</label>
+                                <input class="form-control" min="0" type="number" name="pago_con" id="pago_con">
 
                             <hr/>
                             <span class="text-muted small">
-                                *For United States, France and Germany applicable sales tax will be applied
+                                
                             </span>
                             <div class="m-t-sm">
                                 <div class="btn-group">
                                 <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Pagar</a>
-                                <a href="#" class="btn btn-white btn-sm"> Cancelar</a>
+                                <a href="#" class="btn btn-danger btn-sm"> Cancelar</a>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +101,7 @@
                              
                             <div class="ibox-content">
                             <div class="table-responsive">
-                            <table class="table table-bordered" >
+                            <table id="tablita" class="table table-bordered" >
                             <thead>
                             <tr>
                                 <th>#</th>

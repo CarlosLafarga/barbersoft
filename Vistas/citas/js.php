@@ -1,9 +1,19 @@
 <?PHP include "../../Includes/parts/js.php";?>
 <script type="text/javascript">
 	$( document ).ready(function() {
-    console.log( "ready!" );
+
+    $('.clockpicker').clockpicker();
     var date = $("#fecha-escoger").val();
     listar(date);
+    listar_barberos();
+
+    $('#data1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+    });
     });
 
 
@@ -42,6 +52,17 @@
 
     }  
 
+        function listar_barberos(){
+
+            $.ajax({
+
+              type:"POST",
+              url: "../../Controllers/caja/listar_barberos.php",
+              success: function(response){
+              $('#peluquero').html(response).fadeIn();
+             }
+        });
+        }
 
     $( "#guardar" ).click(function() {
 
