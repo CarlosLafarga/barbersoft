@@ -63,7 +63,7 @@
          
 
          //contador para asignar id al boton que borrara la fila
-         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td>' + precio + '</td><td>'+precio+'</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
+         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td>' + precio + '</td><td class="subtotal">'+precio+'</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
         
          
           console.log("fila",fila);
