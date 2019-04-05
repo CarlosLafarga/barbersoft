@@ -85,7 +85,7 @@
        function deleteRow(r) {
 
          
-         var i = r.parentNode.parentNode.rowIndex;
+         var i = r.parentNode.parentNode.parentNode.rowIndex;
          console.log("este es el valor de r",r.parentNode.parentNode.parentNode.rowIndex);
          console.log("este es el valor de i",i);
          swal({
@@ -102,12 +102,12 @@
 
          if (isConfirm){
 
-         var total_ventas = document.getElementById('ventas').rows[0].cells[3];
+         var total_ventas = document.getElementById('tablita').rows[i].cells[4];
          var total_input = document.getElementById("total").value;
          var precio_producto_select = total_ventas.innerHTML;
          var preciofinalrow =  parseFloat(total_input) - parseFloat(precio_producto_select);
          document.getElementById("total").value = preciofinalrow.toFixed(2);
-         document.getElementById("ventas").deleteRow(i);
+         document.getElementById("tablita").deleteRow(i);
          contador = contador -1;
          console.log("total_row ",total_ventas);      
                          
