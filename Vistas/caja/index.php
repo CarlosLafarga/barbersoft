@@ -108,6 +108,7 @@
                                 <th>Tipo Corte</th>
                                 <th>Cantidad</th>
                                 <th>Precio</th>
+                                <th>Total</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>

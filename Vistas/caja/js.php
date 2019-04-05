@@ -63,7 +63,7 @@
          
 
          //contador para asignar id al boton que borrara la fila
-         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td>' + precio + '</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
+         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td>' + precio + '</td><td>'+precio+'</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
         
          
           console.log("fila",fila);
@@ -125,10 +125,11 @@
 
             var row = e.parentNode.parentNode.rowIndex;
             console.log("row", row);
-            var total_ventas = document.getElementById('tablita').rows[row].cells[3];
-            var precio_articulo = document.getElementById('tablita').rows[row].cells[3].children[0].value;
+            var total_ventas = document.getElementById('tablita').rows[row].cells[4];
+            var precio_articulo = document.getElementById('tablita').rows[row].cells[3].innerHTML;
+            console.log("precio articulos", precio_articulo);
             var precio_input1 = $("#precios"+row+"").val();
-            var chuy = precio_articulo.value = Number(precio_input1);
+            var chuy = precio_articulo.value = Number(precio_articulo);
 
 
 
@@ -145,7 +146,7 @@
                  data.push(parseFloat($(this).text()));
              });
             var suma = data.reduce(function(a,b){ return a+b; },0);
-
+            console.log("suma",suma);
 
             document.getElementById("total").value = suma.toFixed(2);
 
