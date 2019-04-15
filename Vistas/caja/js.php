@@ -63,7 +63,7 @@
          
 
          //contador para asignar id al boton que borrara la fila
-         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td>' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control"id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td>' + precio + '</td><td class="subtotal">'+precio+'</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
+         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td class="tipo_corte">' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control cantidad" id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td class="precio">' + precio + '</td><td class="subtotal">'+precio+'</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
         
          
           console.log("fila",fila);
@@ -151,6 +151,66 @@
             document.getElementById("total").value = suma.toFixed(2);
 
 
+            }
+
+            function pagar(){
+
+                var tipo_corte = [];
+                var cantidad = [];
+                var precio = [];
+                var subtotal = [];
+
+                $('.tipo_corte').each(function(){
+                   tipo_corte.push($(this).val()); 
+                 });
+
+                $('.cantidad').each(function(){
+                   cantidad.push($(this).val()); 
+                 });
+
+                $('.precio').each(function(){
+                   precio.push($(this).val()); 
+                 });
+
+                $('.subtotal').each(function(){
+                   subtotal.push($(this).val()); 
+                 });
+
+                var pago_con = $("#pago_con").val();
+                var total = $("#total").val();
+                var nombre_usuario = "Prueba";
+                var tipo_pago = $("#tipo_pago").val();
+                var id_barbero = $("#barbero").val();
+
+
+
+                
+            }
+
+            function cancelar(){
+
+                    swal({
+                         title: "Estas Seguro?",
+                         text: "¿Desea cancelar la venta ?",
+                         type: "warning",
+                         showCancelButton: true,
+                         confirmButtonColor: '#DD6B55',
+                         confirmButtonText: 'Si, Estoy seguro!',
+                         cancelButtonText: "No, Cancelar!"
+
+                         },
+                         function (isConfirm) { /*Your Code Here*/
+
+                          if (isConfirm){
+
+                              location.reload();
+
+                              }else{
+
+                               return false;
+
+                             }
+                        });
             }
        
 </script>

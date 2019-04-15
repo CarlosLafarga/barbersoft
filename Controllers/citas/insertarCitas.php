@@ -10,7 +10,7 @@ if (isset($_POST['nombre'])) {
     
 }
 
-$sql = "INSERT INTO citas (nombre_persona,fechahora_cita,id_persona,fecha_creacion) VALUES ('".$nombre."','".$fecha_hora."',".$id_personal.",'NOW()')";
+$sql = "INSERT INTO citas (nombre_persona,fechahora_cita,id_persona,fecha_creacion) VALUES ('".$nombre."','".$fecha_hora."',".$id_personal.",NOW())";
 
 $ejecutar = mysql_query($sql, $cn) or die(mysql_error());
 

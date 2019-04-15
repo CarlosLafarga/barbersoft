@@ -33,7 +33,7 @@
                       <li>
                          <a href="#"><i class="fa fa-user-o"></i> <span class="nav-label">USUARIOS</span><span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level collapse">
-                            <li><a href="../../Vistas/usuarios/">Nuevos Usuarios</a></li>
+                            <li><a href="../../Vistas/usuarios/">Administrar Usuarios</a></li>
                             <li><a href="../../Vistas/usuarios/">Cambiar Contraseña</a></li>
                          </ul>
                       </li>

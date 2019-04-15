@@ -25,7 +25,33 @@
                 <div class="col-lg-12">
                 <div class="wrapper wrapper-content">
                     <!--Contenedor-->
-                      
+                        <div class="ibox">
+                            <div class="ibox-title">
+                            <span class="pull-right"></span>
+                            <h5>Servicios</h5>
+                            </div>
+
+                            <div class="ibox-content">
+                              <button  class="btn btn-primary" data-toggle="modal"  data-target="#agregar">Agregar Servicio</button><br><br>
+                               <div class="table-responsive">
+                                <table  id="servicios" class="table table-striped table-bordered table-hover dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre Servicio</th>
+                                    <th>Precio Servicios</th>
+                                    <th>Fecha de Creacion</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                </thead>
+
+                            </table>
+
+
+                            </div>
+                          </div>
+                     </div>
+                     <?PHP include "modals/agregar_modal.php";?>
                     <!--Fin Contenedor-->   
                 </div>
                 </div>
@@ -39,6 +65,6 @@
     
 
     <!-- Mainly scripts -->
-    <?PHP include "../../Includes/parts/js.php";?>
+      <?PHP include "js.php";?>
 </body>
 </html>

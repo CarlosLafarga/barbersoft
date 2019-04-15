@@ -37,11 +37,8 @@
                               <input type="text" name="name" id="nombre" class="form-control">
                               <br>
                               <label>Fecha Cita</label>
-                              <div class="form-group" id="data1">
-                                <div class="input-group date">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" id="fecha" class="form-control" value="<?php date_default_timezone_set('America/Hermosillo'); echo date('Y-m-d'); ?>">
-                                </div>
-                              </div>
+                              <input type="date" id="fecha" class="form-control" value="<?php date_default_timezone_set('America/Hermosillo'); echo date('Y-m-d'); ?>">
+                               <br>
                               <label>Hora Cita</label>
                               <div class="input-group clockpicker"  data-autoclose="true">
                                 <input name="hora" type="time" class="form-control" value="" id="hora" >
