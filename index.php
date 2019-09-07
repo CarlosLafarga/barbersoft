@@ -1,3 +1,3 @@
 <script type="text/javascript">
-	window.location.href = "Vistas/login/";
+	window.location.href = "Vistas/caja/";
 </script>

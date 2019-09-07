@@ -3,7 +3,7 @@ include "../../Conection/database_li.php";
 $cn = Conectarse();
 
 
- $datos = $cn->query("SELECT * FROM servicios WHERE activo = 1");
+ $datos = $cn->query("SELECT * FROM servicios WHERE es_activo = 1") or die($cn->error);
  $count = 0;
 
 

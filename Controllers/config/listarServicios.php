@@ -4,7 +4,7 @@ $cn = Conectarse();
 
 
 
-$select = "SELECT * FROM servicios   WHERE activo = 1 ORDER BY Id_servicios";
+$select = "SELECT * FROM servicios   WHERE es_activo = 1 ORDER BY Id_servicios";
 $result = mysql_query($select, $cn);
 
 if (!$result) {

@@ -1,16 +1,16 @@
 <?PHP
-include "../../Conection/database.php";
+include "../../Conection/database_li.php";
 $cn = Conectarse();
 
 $query  = "SELECT Id_personal,nombre_completo FROM personal  WHERE id_puesto  = 1 ORDER BY id_personal ASC";
-$result = mysql_query($query, $cn)
-or die("Ocurrio un error en la consulta SQL");
+$result = mysqli_query($cn , $query)or die($cn->error);
+
 
 echo '<option value="0">Seleccionar opcion...</option>';
-while (($fila = mysql_fetch_array($result)) != null) {
+while (($fila = $result->fetch_assoc())) {
 	
     echo '<option value="' . $fila["Id_personal"] . '">' . $fila["nombre_completo"] . '</option>';
 }
 // Liberar resultados
-mysql_free_result($result);
-mysql_close($cn);
+
+mysqli_close($cn);

@@ -83,7 +83,7 @@
                             </span>
                             <div class="m-t-sm">
                                 <div class="btn-group">
-                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Pagar</a>
+                                <a href="#" class="btn btn-primary btn-sm" onclick="pagar();"><i class="fa fa-shopping-cart"></i> Pagar</a>
                                 <a href="#" class="btn btn-danger btn-sm" onclick="cancelar();"> Cancelar</a>
                                 </div>
                             </div>

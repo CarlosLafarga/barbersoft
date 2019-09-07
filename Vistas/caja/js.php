@@ -52,23 +52,24 @@
        function agregar_venta(valor){
 
        	 var id = $(valor).attr("id");
+         console.log("id",id);
          var uno = document.getElementById(id);
          var tipo_corte = uno.innerText;
+         console.log("tipo corte",tipo_corte);
          var cantidad = 1 ;
          var precio = document.getElementById(id).value;
+         var subtotal = document.getElementById(id).value;
          var total = document.getElementById("total").value;
          var total_acumulado = total + precio;
-         console.log(total);
+         
          contador++;
          
 
          //contador para asignar id al boton que borrara la fila
-         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td class="tipo_corte">' + tipo_corte + '</td><td width="10%"><input type="number" class="form-control cantidad" id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td class="precio">' + precio + '</td><td class="subtotal">'+precio+'</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
+         var fila = '<tr id="row' + contador + '"><td>'+contador+'</td><td><input type="text" class="tipo_corte form-control" value="'+tipo_corte+'" readonly/></td><td width="10%"><input type="number" class="cantidad form-control" id="cantidad" onchange="cantidad(this);" value="1" min="1"></td><td ><input type="number" class="precio form-control" value="'+precio+'" readonly/></td><td class="total">'+subtotal+'</td><td><center><button type="button" onclick="deleteRow(this)" class="btn btn-danger">Eliminar</button></center></td></tr>'; //esto seria lo que contendria la fila
         
-         
-          console.log("fila",fila);
-          console.log("contador",contador);
-          console.log("precio",precio);
+          
+          
 
             
 
@@ -86,8 +87,7 @@
 
          
          var i = r.parentNode.parentNode.parentNode.rowIndex;
-         console.log("este es el valor de r",r.parentNode.parentNode.parentNode.rowIndex);
-         console.log("este es el valor de i",i);
+        
          swal({
          title: "Estas Seguro?",
          text: "¿Desea eliminar el producto de la venta?",
@@ -109,7 +109,7 @@
          document.getElementById("total").value = preciofinalrow.toFixed(2);
          document.getElementById("tablita").deleteRow(i);
          contador = contador -1;
-         console.log("total_row ",total_ventas);      
+             
                          
 
         }else{
@@ -126,7 +126,7 @@
             var row = e.parentNode.parentNode.rowIndex;
             console.log("row", row);
             var total_ventas = document.getElementById('tablita').rows[row].cells[4];
-            var precio_articulo = document.getElementById('tablita').rows[row].cells[3].innerHTML;
+            var precio_articulo = document.getElementById('tablita').rows[row].cells[3].children[0].value;
             console.log("precio articulos", precio_articulo);
             var precio_input1 = $("#precios"+row+"").val();
             var chuy = precio_articulo.value = Number(precio_articulo);
@@ -142,11 +142,11 @@
             total_ventas.innerText = total.toFixed(2);
 
             var data = [];
-            $("td.subtotal").each(function(){
+            $("td.total").each(function(){
                  data.push(parseFloat($(this).text()));
              });
             var suma = data.reduce(function(a,b){ return a+b; },0);
-            console.log("suma",suma);
+            
 
             document.getElementById("total").value = suma.toFixed(2);
 
@@ -172,7 +172,7 @@
                    precio.push($(this).val()); 
                  });
 
-                $('.subtotal').each(function(){
+                $('.total').each(function(){
                    subtotal.push($(this).val()); 
                  });
 
@@ -180,12 +180,174 @@
                 var total = $("#total").val();
                 var nombre_usuario = "Prueba";
                 var tipo_pago = $("#tipo_pago").val();
-                var id_barbero = $("#barbero").val();
+                var id_barbero = $("#barberos").val();
+
+                if(pago_con == ''){
+
+                 swal({
+                         title:"Cuidado!",
+                         text: "Ingrese el monto en el campo pago con.",
+                         type: "warning",
+                         showCancelButton: false,
+                         confirmButtonText: "Aceptar",
+                         closeOnConfirm: true
+                         },
+                         function(){
 
 
+                         });
 
-                
-            }
+               }else{
+
+               if(Number(pago_con) < total){
+
+                  swal({
+                         title:"Cuidado!",
+                         text: "El pago es menor al total de su venta.",
+                         type: "error",
+                         showCancelButton: false,
+                         confirmButtonText: "Aceptar",
+                         closeOnConfirm: true
+                         },
+                         function(){
+
+
+                         });
+
+               }else{
+ 
+
+                  $.ajax({
+                          url:"../../Controllers/caja/insertar_venta.php",
+                          method:"POST",
+                          data:{tipo_corte:tipo_corte,
+                          cantidad:cantidad,
+                          precio:precio,
+                          subtotal:subtotal,
+                          pago_con:pago_con,
+                          total:total,
+                          nombre_usuario:nombre_usuario,
+                          tipo_pago:tipo_pago,
+                          id_barbero:id_barbero
+                          },
+
+
+                 success:function(data){
+
+                    
+                         var obj = JSON.parse(data);
+                  var cambio = Number(data);
+                  var devolucion = parseFloat(pago_con-total);
+
+                   if(obj.numero == 1){
+
+                         swal({
+                         title:"Buen trabajo!",
+                         text: "Se guardo venta con exito. \n  Su cambio es de:    "+devolucion.toFixed(2)+"\n  No.Ticket: "+obj.no_tiket+"",
+                         type: "success",
+                         showCancelButton: false,
+                         confirmButtonText: "Aceptar",
+                         closeOnConfirm: true
+                         },
+                         function(){
+
+                          window.open("ticket2.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
+                          location.reload();
+
+                         });
+
+
+                   }else if(cambio == 4){
+
+
+                        swal({
+                             title: "Error!",
+                             text: "Error en la tabla de ventas",
+                             type: "error",
+                             showCancelButton: false,
+                             confirmButtonText: "Aceptar",
+                             closeOnConfirm: true
+                             },
+                             function(){
+
+                              location.reload();
+
+                             });
+
+                   }else if(cambio == 5){
+
+                         swal({
+                         title:"Error!",
+                         text: "Error en el update de productos",
+                         type: "error",
+                         showCancelButton: false,
+                         confirmButtonText: "Aceptar",
+                         closeOnConfirm: true
+                         },
+                         function(){
+
+                          location.reload();
+                         });
+
+
+                   }else if (cambio == 6 ){
+
+                         swal({
+                         title:"Error!",
+                         text: "Error al momento de insertar en la tabla de ventas.",
+                         type: "error",
+                         showCancelButton: false,
+                         confirmButtonText: "Aceptar",
+                         closeOnConfirm: true
+                         },
+                         function(){
+
+                          location.reload();
+                         });
+
+
+                   }else if(cambio == 7){
+
+                         swal({
+                         title:"Error!",
+                         text: "Error en el script campo vacio del formulario.",
+                         type: "error",
+                         showCancelButton: false,
+                         confirmButtonText: "Aceptar",
+                         closeOnConfirm: true
+                         },
+                         function(){
+
+                          location.reload();
+                         });
+
+
+                   }else if(cambio == 8){
+
+                         swal({
+                         title:"Cuidado!",
+                         text: "No ha seleccionado ningun articulo.",
+                         type: "warning",
+                         showCancelButton: false,
+                         confirmButtonText: "Aceptar",
+                         closeOnConfirm: true
+                         },
+                         function(){
+
+
+                         });
+                   }
+
+                   }
+               
+
+                 });
+             }
+         }
+}
+        
+    
+            
 
             function cancelar(){
 
