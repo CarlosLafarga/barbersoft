@@ -29,4 +29,5 @@
     <link href="../../Includes/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
     <link href="../../Includes/css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
     <link href="../../Includes/css/plugins/fullcalendar/fullcalendar.print.css" rel='stylesheet' media='print'>
+    <link  data-semver="0.4.2" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 

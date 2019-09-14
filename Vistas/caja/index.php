@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Inicio</title>
+    <title>Caja</title>
     <?PHP include "../../Includes/parts/css.php";?>
 </head>
 
@@ -19,6 +19,7 @@
                <?PHP include "../../Includes/parts/navbar.php";?>
                 <div class="row  border-bottom white-bg dashboard-header">
                   <!--titulo-->
+                  
                 </div>
 
                 <div class="row">

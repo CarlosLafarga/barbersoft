@@ -28,6 +28,7 @@
                          <a href="#"><i class="fa fa-money"></i> <span class="nav-label">VENTAS</span><span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level collapse">
                             <li><a href="../../Vistas/caja/">Nueva Venta</a></li>
+                            <li><a href="../../Vistas/caja/cortecaja.php">Corte de caja</a></li>
                          </ul>
                       </li>
                       <li>

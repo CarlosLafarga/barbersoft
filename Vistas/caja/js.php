@@ -87,20 +87,21 @@
 
          
          var i = r.parentNode.parentNode.parentNode.rowIndex;
-        
          swal({
-         title: "Estas Seguro?",
-         text: "¿Desea eliminar el producto de la venta?",
-         type: "warning",
-         showCancelButton: true,
-         confirmButtonColor: '#DD6B55',
-         confirmButtonText: 'Si, Estoy seguro!',
-         cancelButtonText: "No, Cancelar!"
+              title: "Estas Seguro?",
+              text: "¿Desea eliminar el producto de la venta?",
+              icon: "warning",
+              buttons: [
+                  'No, cancelar',
+                  'Si, estoy seguro'
+              ],
+              dangerMode: true,
+              }
+              ).then(
+                function (isConfirm) {
 
-         },
-         function (isConfirm) { 
-
-         if (isConfirm){
+         if (isConfirm) {
+         
 
          var total_ventas = document.getElementById('tablita').rows[i].cells[4];
          var total_input = document.getElementById("total").value;
@@ -114,9 +115,15 @@
 
         }else{
 
-        return false;
-
+          swal({ title: "Cancelado", text: "Tus datos estan a salvo", icon: "success" }).then(function () {  });
+      
         }
+
+       },
+       function() {
+
+          swal({ title: "Cancelado", text: "Tus datos estan a salvo", icon: "success" }).then(function () {  });
+      
         });
 
         }
@@ -184,35 +191,15 @@
 
                 if(pago_con == ''){
 
-                 swal({
-                         title:"Cuidado!",
-                         text: "Ingrese el monto en el campo pago con.",
-                         type: "warning",
-                         showCancelButton: false,
-                         confirmButtonText: "Aceptar",
-                         closeOnConfirm: true
-                         },
-                         function(){
+                 
 
-
-                         });
+               swal({ title: "Cuidado !", text: "Ingrese el monto en el campo pago con.", icon: "warning" }).then(function () { });
 
                }else{
 
                if(Number(pago_con) < total){
 
-                  swal({
-                         title:"Cuidado!",
-                         text: "El pago es menor al total de su venta.",
-                         type: "error",
-                         showCancelButton: false,
-                         confirmButtonText: "Aceptar",
-                         closeOnConfirm: true
-                         },
-                         function(){
-
-
-                         });
+               swal({ title: "Cuidado !", text: "El pago es menor al total de su venta..", icon: "warning" }).then(function () { });
 
                }else{
  
@@ -235,107 +222,56 @@
                  success:function(data){
 
                     
-                         var obj = JSON.parse(data);
+                  var obj = JSON.parse(data);
                   var cambio = Number(data);
+                  console.log("cambio", cambio);
                   var devolucion = parseFloat(pago_con-total);
 
                    if(obj.numero == 1){
 
-                         swal({
-                         title:"Buen trabajo!",
-                         text: "Se guardo venta con exito. \n  Su cambio es de:    "+devolucion.toFixed(2)+"\n  No.Ticket: "+obj.no_tiket+"",
-                         type: "success",
-                         showCancelButton: false,
-                         confirmButtonText: "Aceptar",
-                         closeOnConfirm: true
-                         },
-                         function(){
+                         
 
-                          window.open("ticket2.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
-                          location.reload();
+                       swal({ title: "Buen trabajo!", 
+                              text: "Se guardo venta con exito. \n  Su cambio es de:    "+devolucion.toFixed(2)+"\n  No.Ticket: "+obj.no_tiket+"", 
+                              icon: "success" }).then(function () {
 
-                         });
+                              window.open("ticket2.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
+                              location.reload();});
 
 
                    }else if(cambio == 4){
 
 
-                        swal({
-                             title: "Error!",
-                             text: "Error en la tabla de ventas",
-                             type: "error",
-                             showCancelButton: false,
-                             confirmButtonText: "Aceptar",
-                             closeOnConfirm: true
-                             },
-                             function(){
+                        
 
-                              location.reload();
-
-                             });
+                    swal({ title: "Error !", text: "Error en la tabla de ventas", icon: "error" }).then(function () { location.reload(); });
 
                    }else if(cambio == 5){
 
-                         swal({
-                         title:"Error!",
-                         text: "Error en el update de productos",
-                         type: "error",
-                         showCancelButton: false,
-                         confirmButtonText: "Aceptar",
-                         closeOnConfirm: true
-                         },
-                         function(){
+                       
 
-                          location.reload();
-                         });
+
+                    swal({ title: "Error !", text: "Error en el update de productos", icon: "error" }).then(function () { location.reload(); });
 
 
                    }else if (cambio == 6 ){
 
-                         swal({
-                         title:"Error!",
-                         text: "Error al momento de insertar en la tabla de ventas.",
-                         type: "error",
-                         showCancelButton: false,
-                         confirmButtonText: "Aceptar",
-                         closeOnConfirm: true
-                         },
-                         function(){
+                         
 
-                          location.reload();
-                         });
+                    swal({ title: "Error !", text: "Error al momento de insertar en la tabla de ventas.", icon: "error" }).then(function () { location.reload(); });
+
 
 
                    }else if(cambio == 7){
 
-                         swal({
-                         title:"Error!",
-                         text: "Error en el script campo vacio del formulario.",
-                         type: "error",
-                         showCancelButton: false,
-                         confirmButtonText: "Aceptar",
-                         closeOnConfirm: true
-                         },
-                         function(){
+                        
 
-                          location.reload();
-                         });
+                    swal({ title: "Error !", text: "Error en el script campo vacio del formulario..", icon: "error" }).then(function () { location.reload(); });
 
 
                    }else if(cambio == 8){
 
-                         swal({
-                         title:"Cuidado!",
-                         text: "No ha seleccionado ningun articulo.",
-                         type: "warning",
-                         showCancelButton: false,
-                         confirmButtonText: "Aceptar",
-                         closeOnConfirm: true
-                         },
-                         function(){
-
-
-                         });
+                     swal({ title: "Error !", text: "No ha seleccionado ningun articulo.", icon: "error" }).then(function () { });
                    }
 
                    }
@@ -351,17 +287,20 @@
 
             function cancelar(){
 
-                    swal({
-                         title: "Estas Seguro?",
-                         text: "¿Desea cancelar la venta ?",
-                         type: "warning",
-                         showCancelButton: true,
-                         confirmButtonColor: '#DD6B55',
-                         confirmButtonText: 'Si, Estoy seguro!',
-                         cancelButtonText: "No, Cancelar!"
+                  swal({
+                        title: "Estas Seguro?",
+                        text: "¿Desea cancelar la venta ?",
+                        icon: "warning",
+                        buttons: [
+                            'No, cancelar!',
+                            'SI, Estoy seguro !'
+                        ],
+                        dangerMode: true,
+                        }
+                        ).then(
 
-                         },
-                         function (isConfirm) { /*Your Code Here*/
+                          function (isConfirm) {
+                 
 
                           if (isConfirm){
 
