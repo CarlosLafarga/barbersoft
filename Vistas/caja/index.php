@@ -1,3 +1,16 @@
+<?php
+
+@require_once "../login/sesion.class.php";
+$sesion  = new sesion();
+$usuario = $sesion->get("usuario");
+
+if ($usuario == false) {
+
+    echo "<script language='JavaScript'>";
+    echo "location = '../login/'";
+    echo "</script>";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
